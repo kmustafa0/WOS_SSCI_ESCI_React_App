@@ -55,6 +55,10 @@ function App() {
         item.ISSN.toLowerCase().includes(e.target.value.toLowerCase())
       );
       setItem(filterResult);
+      const filterResult2 = searchItem.filter((item) =>
+        item.eISSN.toLowerCase().includes(e.target.value.toLowerCase())
+      );
+      setItem(filterResult2);
     } else if (regex.test(e.target.value)) {
       const filterResult = searchItem.filter((item) =>
         item["Journal_name"].toLowerCase().includes(e.target.value.toLowerCase())
