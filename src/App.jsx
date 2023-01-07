@@ -61,7 +61,9 @@ function App() {
       setItem(filterResult2);
     } else if (regex.test(e.target.value)) {
       const filterResult = searchItem.filter((item) =>
-        item["Journal_name"].toLowerCase().includes(e.target.value.toLowerCase())
+        item["Journal_name"]
+          .toLowerCase()
+          .includes(e.target.value.toLowerCase())
       );
       setItem(filterResult);
     }
@@ -99,7 +101,7 @@ function App() {
       <table className="table table-hover table-striped table-sm table-responsive-sm table-bordered">
         <thead>
           <tr className={"text-center"}>
-          <th scope="col">Journal name</th>
+            <th scope="col">Journal name</th>
             <th scope="col">JCR Abbreviation</th>
             <th scope="col">ISSN</th>
             <th scope="col">eISSN</th>
@@ -114,17 +116,17 @@ function App() {
         <tbody>
           {currentPosts.map((d) => (
             <tr key={d.Journal_name} className={"text-center"}>
-            <th scope="row">{d.Journal_name}</th>
-            <td>{d["JCR Abbreviation"]}</td>
-            <td>{d["ISSN"]}</td>
-            <td>{d["eISSN"]}</td>
-            <td>{d["Category"]}</td>
-            <td>{d["Total Citations"]}</td>
-            <td>{d["2020 JIF"]}</td>
-            <td>{d["JIF Quartile"]}</td>
-            <td>{d["2020 JCI"]}</td>
-            <td>{d["% of OA Gold"]}</td>
-          </tr>
+              <th scope="row">{d.Journal_name}</th>
+              <td>{d["JCR Abbreviation"]}</td>
+              <td>{d["ISSN"]}</td>
+              <td>{d["eISSN"]}</td>
+              <td>{d["Category"]}</td>
+              <td>{d["Total Citations"]}</td>
+              <td>{d["2020 JIF"]}</td>
+              <td>{d["JIF Quartile"]}</td>
+              <td>{d["2020 JCI"]}</td>
+              <td>{d["% of OA Gold"]}</td>
+            </tr>
           ))}
         </tbody>
       </table>
